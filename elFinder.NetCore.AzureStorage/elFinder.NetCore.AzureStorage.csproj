@@ -4,19 +4,18 @@
     <Authors>Yevhen Noskov, Leniel Macaferi, Matt Gordon, Flavio Smirne</Authors>
     <Company>N/A</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageProjectUrl>https://github.com/gordon-matt/elFinder.NetCore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/fsmirne/elFinder.NetCore.AzureStorage</PackageProjectUrl>
     <Description>Microsoft Azure Storage driver for elFinder.NetCore</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Version>1.3.1</Version>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/fsmirne/elFinder.NetCore.AzureStorage</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="elFinder.NetCore" Version="1.3.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\elFinder.NetCore\elFinder.NetCore.csproj" />
   </ItemGroup>
 </Project>

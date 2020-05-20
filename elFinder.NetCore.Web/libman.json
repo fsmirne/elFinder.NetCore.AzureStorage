@@ -19,10 +19,6 @@
       "destination": "wwwroot/lib/jquery-validation-unobtrusive"
     },
     {
-      "library": "tinymce@4.7.7",
-      "destination": "wwwroot/lib/tinymce-dist"
-    },
-    {
       "library": "jqueryui@1.12.1",
       "destination": "wwwroot/lib/jquery-ui"
     },

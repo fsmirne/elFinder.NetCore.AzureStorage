@@ -25,4 +25,4 @@ AzureStorageAPI.AccountKey = "[Key]";
 
 ## Dependencies
 
-This plugin depends on [**elFinder.NetCore**](https://github.com/gordon-matt/elFinder.NetCore) from Matt Gordon
+This plugin depends on [**elFinder.NetCore**](https://github.com/gordon-matt/elFinder.NetCore) from [Matt Gordon](https://github.com/gordon-matt)

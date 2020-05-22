@@ -21,8 +21,6 @@ AzureStorageAPI.AccountKey = "[Key]";
 
 2. Change the **root directory** in the `AzureStorageController` from `test` to the name of your Azure file share.
 
-3. Change the `url` parameter in **/Views/FileManager/Index.cshtml** to point to the `AzureStorageController`.
-
 ## Dependencies
 
 This plugin depends on [**elFinder.NetCore**](https://github.com/gordon-matt/elFinder.NetCore) from [Matt Gordon](https://github.com/gordon-matt)

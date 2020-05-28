@@ -360,7 +360,7 @@ namespace elFinder.NetCore.Drivers.AzureStorage
                 var f = new AzureStorageFile(file as CloudFile);
                 if (!f.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType))
+                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType) && !mimeTypes.Contains(f.MimeType.Type))
                         continue;
 
                     response.Files.Add(await BaseModel.CreateAsync(f, path.RootVolume));
@@ -420,7 +420,7 @@ namespace elFinder.NetCore.Drivers.AzureStorage
                 var f = new AzureStorageFile(file as CloudFile);
                 if (!f.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType))
+                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType) && !mimeTypes.Contains(f.MimeType.Type))
                         continue;
 
                     response.List.Add(f.Name);
@@ -498,7 +498,7 @@ namespace elFinder.NetCore.Drivers.AzureStorage
                 var f = new AzureStorageFile(file as CloudFile);
                 if (!f.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType))
+                    if (mimeTypes != null && mimeTypes.Count() > 0 && !mimeTypes.Contains(f.MimeType) && !mimeTypes.Contains(f.MimeType.Type))
                         continue;
 
                     response.Files.Add(await BaseModel.CreateAsync(f, path.RootVolume));

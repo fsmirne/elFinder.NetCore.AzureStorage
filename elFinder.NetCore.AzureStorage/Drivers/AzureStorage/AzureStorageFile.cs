@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using elFinder.NetCore.Helpers;
+using elFinder.NetCore.Models;
 using Microsoft.WindowsAzure.Storage.File;
 
 namespace elFinder.NetCore.Drivers.AzureStorage
@@ -98,7 +99,7 @@ namespace elFinder.NetCore.Drivers.AzureStorage
             }
         }
 
-        public string MimeType => MimeHelper.GetMimeType(Extension);
+        public MimeType MimeType => MimeHelper.GetMimeType(Extension);
 
         public IFile Open(string path) => new AzureStorageFile(path);
 

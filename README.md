@@ -21,6 +21,11 @@ AzureStorageAPI.AccountKey = "[Key]";
 
 2. Change the **root directory** in the `AzureStorageController` from `test` to the name of your Azure file share.
 
+## Azure Blob Storage
+
+This plugin adds support for the File Storage type in Azure. For Blob support, take a look at [AzureBlobStorage](https://github.com/brunomel/elFinder.NetCore.AzureBlobStorage) by [Bruno 
+Melegari](https://github.com/brunomel)
+
 ## Dependencies
 
 This plugin depends on [**elFinder.NetCore**](https://github.com/gordon-matt/elFinder.NetCore) by [Matt Gordon](https://github.com/gordon-matt)

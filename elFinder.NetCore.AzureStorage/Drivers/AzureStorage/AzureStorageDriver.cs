@@ -882,6 +882,28 @@ namespace elFinder.NetCore.Drivers.AzureStorage
 
         #endregion IDriver Members
 
+        // https://github.com/fsmirne/elFinder.NetCore.AzureStorage/issues/2
+        protected override async Task AddDirectoryToArchiveAsync(ZipArchive zipFile, IDirectory directoryInfo, string root)
+        {
+            string entryName = $"{root}{directoryInfo.Name}/";
+
+            zipFile.CreateEntry(entryName);
+            var dirs = await directoryInfo.GetDirectoriesAsync();
+
+            foreach (var dir in dirs)
+            {
+                await AddDirectoryToArchiveAsync(zipFile, dir, entryName);
+            }
+
+            var files = await directoryInfo.GetFilesAsync(null);
+            foreach (var file in files)
+            {
+                var filePath = Path.GetTempFileName();
+                File.WriteAllBytes(filePath, await AzureStorageAPI.FileBytesAsync(file.FullName));
+                zipFile.CreateEntryFromFile(filePath, entryName + file.Name);
+            }
+        }
+
         private async Task<string> CreateNameForCopy(IFile file, string suffix)
         {
             string parentPath = file.DirectoryName;

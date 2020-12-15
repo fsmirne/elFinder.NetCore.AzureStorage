@@ -357,10 +357,10 @@ namespace elFinder.NetCore.Drivers.AzureStorage
         {
             await CopyDirectoryAsync(source, destination);
 
-            var rootDir = GetRootDirectoryReference(source);
-            var sourceDir = rootDir.GetDirectoryReference(RelativePath(source));
-
-            await sourceDir.DeleteAsync();
+            // In order to delete a directory it must first be empty per Microsoft
+            // https://docs.microsoft.com/en-us/rest/api/storageservices/delete-directory
+            // Instead, we should recursively delete the subfolders, files, and lastly the source folder.
+            await DeleteDirectoryAsync(source);
         }
 
         public static async Task MoveFileAsync(string source, string destination)
